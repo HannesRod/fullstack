@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+    font-family: 'Roboto', sans-serif;
+  }
+p {
+    color:lawngreen;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+span {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
