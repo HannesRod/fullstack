@@ -1,0 +1,88 @@
+
+.navbar {
+  background-color: #1f2937;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-icon {
+  color: white;
+}
+
+.brand-name {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.navbar-links-desktop {
+  display: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #d1d5db;
+}
+
+.mobile-menu-button {
+  display: block;
+}
+
+.mobile-menu-button button {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-links-mobile {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+/* Media query for desktop view */
+@media (min-width: 768px) {
+  .navbar-links-desktop {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .navbar-links-mobile {
+    display: none;
+  }
+}
+.nav-link.active {
+  color: #60a5fa;
+  font-weight: bold;
+}

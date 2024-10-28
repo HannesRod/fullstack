@@ -1,0 +1,86 @@
+.not-home-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  .not-home-title {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  
+  .counter-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .counter-value {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .counter-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .counter-button.decrease {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .counter-button.decrease:hover {
+    background-color: #dc2626;
+  }
+  
+  .counter-button.increase {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .counter-button.increase:hover {
+    background-color: #059669;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #93c5fd;
+    color: #1e40af;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
