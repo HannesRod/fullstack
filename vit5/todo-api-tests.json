@@ -1,0 +1,158 @@
+{
+    "info": {
+      "name": "Todo API Tests",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create Todo",
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:3000/todos",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"task\": \"Buy groceries\"}"
+          }
+        },
+        "response": {
+          "status": "Created",
+          "code": 201,
+          "body": {
+            "id": 1,
+            "task": "Buy groceries",
+            "completed": false,
+            "createdAt": "2024-11-03T10:00:00.000Z"
+          }
+        }
+      },
+      {
+        "name": "Get All Todos",
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/todos"
+        },
+        "response": {
+          "status": "OK",
+          "code": 200,
+          "body": [
+            {
+              "id": 1,
+              "task": "Buy groceries",
+              "completed": false,
+              "createdAt": "2024-11-03T10:00:00.000Z"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Get Single Todo",
+        "request": {
+          "method": "GET",
+          "url": "http://localhost:3000/todos/1"
+        },
+        "response": {
+          "status": "OK",
+          "code": 200,
+          "body": {
+            "id": 1,
+            "task": "Buy groceries",
+            "completed": false,
+            "createdAt": "2024-11-03T10:00:00.000Z"
+          }
+        }
+      },
+      {
+        "name": "Update Todo",
+        "request": {
+          "method": "PUT",
+          "url": "http://localhost:3000/todos/1",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"task\": \"Buy groceries and milk\", \"completed\": true}"
+          }
+        },
+        "response": {
+          "status": "OK",
+          "code": 200,
+          "body": {
+            "id": 1,
+            "task": "Buy groceries and milk",
+            "completed": true,
+            "createdAt": "2024-11-03T10:00:00.000Z",
+            "updatedAt": "2024-11-03T10:30:00.000Z"
+          }
+        }
+      },
+      {
+        "name": "Delete Todo",
+        "request": {
+          "method": "DELETE",
+          "url": "http://localhost:3000/todos/1"
+        },
+        "response": {
+          "status": "No Content",
+          "code": 204
+        }
+      },
+      {
+        "name": "Error - Create Todo Without Task",
+        "request": {
+          "method": "POST",
+          "url": "http://localhost:3000/todos",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{}"
+          }
+        },
+        "response": {
+          "status": "Bad Request",
+          "code": 400,
+          "body": {
+            "error": "Task is required"
+          }
+        }
+      },
+      {
+        "name": "Error - Update Non-existent Todo",
+        "request": {
+          "method": "PUT",
+          "url": "http://localhost:3000/todos/999",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"task\": \"This will fail\"}"
+          }
+        },
+        "response": {
+          "status": "Not Found",
+          "code": 404,
+          "body": {
+            "error": "Todo item not found"
+          }
+        }
+      }
+    ]
+  }
